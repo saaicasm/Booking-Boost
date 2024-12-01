@@ -1,6 +1,6 @@
 package handler
 
-import (
+import (                 
 	"net/http"
 
 	"github.com/iamlego/bookingBoost/pkg/config"
