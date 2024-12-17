@@ -1,15 +1,61 @@
 {{template "base" .}}
 
 {{define "content"}}
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h1>This is Home Page</h1>
-                <h2>You Will never Walk Alone</h2>
-                <h3>Lazer Focus</h3>
-                <h3>Deep Work</h3>
-                <img src="/static/images/house.jpg">
+
+    <div id="main-carousel" class="carousel slide" data-ride="carousel">
+
+        <ol class="carousel-indicators">
+            <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#main-carousel" data-slide-to="1"></li>
+            <li data-target="#main-carousel" data-slide-to="2"></li>
+        </ol>
+    
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="static/images/breakfast.jpg" class="d-block w-100" alt="Woman and laptop">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Start Your Morning Right</h5>
+                    <p>Enjoy a productive day with a wholesome breakfast and the perfect workspace setup.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="static/images/tray.jpg" class="d-block w-100" alt="Tray with coffee">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Relax with a Coffee Break</h5>
+                    <p>Take a moment to unwind with a warm coffee and some delightful treats.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="static/images/outside.jpg" class="d-block w-100" alt="Outside">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Embrace the Outdoors</h5>
+                    <p>Step outside and rejuvenate your mind with the tranquility of nature.</p>
+                </div>
             </div>
         </div>
+    </div>
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center mt-4">Lakeside Retreat </h1>
+                <h2 class="text-center">A Tranquil Escape Surrounded by Nature</h2>
+                <p>
+                    Welcome to Lakeside Retreat Lodge, where the beauty of nature meets the comfort of home. Situated by a serene lake and embraced by lush forests, our lodge offers a peaceful sanctuary for those seeking relaxation and adventure. Enjoy leisurely walks along the lake, unwind on the deck with a refreshing drink, or explore the nearby hills and trails. With cozy rooms, breathtaking views, and a warm, welcoming atmosphere, Lakeside Retreat Lodge is your perfect escape from the hustle and bustle of daily life. Let the quiet whisper of the trees and the calming sound of the water restore your spirit.
+                </p>
+            </div>            
+        </div>
+
+
+        <div class="row">
+
+            <div class="col text-center">
+
+                <a href="/search-availability" class="btn btn-success">Make Reservation Now</a>
+
+            </div>
+        </div>
+
     </div>
 {{end}}
