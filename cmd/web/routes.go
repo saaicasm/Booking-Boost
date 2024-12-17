@@ -1,7 +1,6 @@
 package main
 
 import (
-	"log"
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
@@ -22,9 +21,14 @@ func routes(app *config.AppConfig) http.Handler {
 
 	mux.Get("/", handler.Repo.Home)
 	mux.Get("/About", handler.Repo.About)
+	mux.Get("/generals-quarters", handler.Repo.Generals)
+	mux.Get("/majors-suite", handler.Repo.Majors)
+	mux.Get("/search-availability", handler.Repo.Availability)
+	mux.Get("/make-reservation", handler.Repo.Reservation)
+	mux.Get("/contact", handler.Repo.Contact)
 
 	fileServer := http.FileServer(http.Dir("./static"))
-	log.Println("The content of file server are : ", fileServer) // it is &{./static}
+	// log.Println("The content of file server are : ", fileServer) // it is &{./static}
 
 	mux.Handle("/static/*", http.StripPrefix("/static", fileServer))
 
