@@ -1,7 +1,9 @@
 package handler
 
 import (
+	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/iamlego/bookingBoost/pkg/config"
@@ -84,4 +86,28 @@ func (m *Repository) PostAvailability(w http.ResponseWriter, r *http.Request) {
 	end := r.Form.Get("end")
 
 	w.Write([]byte(fmt.Sprintf("This is a Post request from GO for start date: %s and end date %s", start, end)))
+}
+
+type responseJSON struct {
+	Ok      bool   `json:"ok"`
+	Message string `json:"message"`
+}
+
+// PostAvailibilityJSON renders the dates input by user
+func (m *Repository) PostAvailabilityJSON(w http.ResponseWriter, r *http.Request) {
+
+	resp := responseJSON{
+		Ok:      true,
+		Message: "This is Json",
+	}
+
+	out, err := json.MarshalIndent(resp, "", "   ")
+
+	if err != nil {
+		log.Println(err)
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	w.Write(out)
+
 }
