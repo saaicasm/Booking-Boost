@@ -76,6 +76,15 @@ document.getElementById("check-availability-button").addEventListener("click", f
     attention.custom({
         title: 'Choose your dates',
         msg: html,
+        callback: function(result) {
+            console.log("Called from attention")
+            
+            fetch('/search-availability-json')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                })
+        }
     });
 })
 
