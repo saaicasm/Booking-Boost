@@ -6,9 +6,9 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/iamlego/bookingBoost/pkg/config"
-	"github.com/iamlego/bookingBoost/pkg/models"
-	"github.com/iamlego/bookingBoost/pkg/render"
+	"github.com/iamlego/bookingBoost/internal/config"
+	"github.com/iamlego/bookingBoost/internal/models"
+	"github.com/iamlego/bookingBoost/internal/render"
 )
 
 // Repo the repository used by the handlers

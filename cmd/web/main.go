@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/alexedwards/scs/v2"
-	"github.com/iamlego/bookingBoost/pkg/config"
-	handler "github.com/iamlego/bookingBoost/pkg/handlers"
-	"github.com/iamlego/bookingBoost/pkg/render"
+	"github.com/iamlego/bookingBoost/internal/config"
+	handler "github.com/iamlego/bookingBoost/internal/handlers"
+	"github.com/iamlego/bookingBoost/internal/render"
 )
 
 const port = ":3000"
