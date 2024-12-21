@@ -8,8 +8,8 @@ import (
 	"net/http"
 	"path/filepath"
 
-	"github.com/iamlego/bookingBoost/pkg/config"
-	"github.com/iamlego/bookingBoost/pkg/models"
+	"github.com/iamlego/bookingBoost/internal/config"
+	"github.com/iamlego/bookingBoost/internal/models"
 	"github.com/justinas/nosurf"
 )
 

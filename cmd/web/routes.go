@@ -4,8 +4,8 @@ import (
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
-	"github.com/iamlego/bookingBoost/pkg/config"
-	handler "github.com/iamlego/bookingBoost/pkg/handlers"
+	"github.com/iamlego/bookingBoost/internal/config"
+	"github.com/iamlego/bookingBoost/internal/handlers"
 )
 
 func routes(app *config.AppConfig) http.Handler {
@@ -27,7 +27,7 @@ func routes(app *config.AppConfig) http.Handler {
 	mux.Get("/make-reservation", handler.Repo.Reservation)
 	mux.Get("/contact", handler.Repo.Contact)
 
-	mux.Get("/search-availability-json", handler.Repo.PostAvailabilityJSON)
+	mux.Post("/search-availability-json", handler.Repo.PostAvailabilityJSON)
 	mux.Post("/search-availability", handler.Repo.PostAvailability)
 
 	fileServer := http.FileServer(http.Dir("./static"))
