@@ -7,6 +7,7 @@ import (
 	"net/http"
 
 	"github.com/iamlego/bookingBoost/internal/config"
+	"github.com/iamlego/bookingBoost/internal/forms"
 	"github.com/iamlego/bookingBoost/internal/models"
 	"github.com/iamlego/bookingBoost/internal/render"
 )
@@ -59,7 +60,14 @@ func (m *Repository) Reservation(w http.ResponseWriter, r *http.Request) {
 	render.RenderTemplate(w, r, "make-reservation.page.tmpl", &models.TemplateData{})
 }
 
-// Generals renders the Gnerals quarters page
+// PostReservation renders the make a reservation page and displays forms
+func (m *Repository) PostReservation(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, r, "make-reservation.page.tmpl", &models.TemplateData{
+		Form: forms.New(nil),
+	})
+}
+
+// Generals renders the Generals quarters page
 func (m *Repository) Generals(w http.ResponseWriter, r *http.Request) {
 	render.RenderTemplate(w, r, "generals.page.tmpl", &models.TemplateData{})
 }
