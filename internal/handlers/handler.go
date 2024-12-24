@@ -57,14 +57,43 @@ func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 
 // Reservation renders the make a reservation page and displays forms
 func (m *Repository) Reservation(w http.ResponseWriter, r *http.Request) {
-	render.RenderTemplate(w, r, "make-reservation.page.tmpl", &models.TemplateData{})
-}
-
-// PostReservation renders the make a reservation page and displays forms
-func (m *Repository) PostReservation(w http.ResponseWriter, r *http.Request) {
 	render.RenderTemplate(w, r, "make-reservation.page.tmpl", &models.TemplateData{
 		Form: forms.New(nil),
 	})
+
+}
+
+// PostReservation makes a post request from the form
+func (m *Repository) PostReservation(w http.ResponseWriter, r *http.Request) {
+	err := r.ParseForm()
+	if err != nil {
+		log.Println(err)
+		return
+	}
+
+	reservation := models.Reservation{
+		FirstName: r.Form.Get("first_name"),
+		LastName:  r.Form.Get("last_name"),
+		Email:     r.Form.Get("email"),
+		Phone:     r.Form.Get("phone"),
+	}
+	// post form contains parsed data from request r. only available if ParseForm is called
+	form := forms.New(r.PostForm)
+
+	form.Has("first_name", *r)
+
+	if !form.Valid() {
+		data := make(map[string]interface{})
+		data["reservation"] = reservation
+
+		render.RenderTemplate(w, r, "make-reservation.page.tmpl", &models.TemplateData{
+			Form: form,
+			Data: data,
+		})
+
+		return
+	}
+
 }
 
 // Generals renders the Generals quarters page
