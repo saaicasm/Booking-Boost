@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/gob"
 	"fmt"
 	"log"
 	"net/http"
@@ -9,6 +10,7 @@ import (
 	"github.com/alexedwards/scs/v2"
 	"github.com/iamlego/bookingBoost/internal/config"
 	handler "github.com/iamlego/bookingBoost/internal/handlers"
+	"github.com/iamlego/bookingBoost/internal/models"
 	"github.com/iamlego/bookingBoost/internal/render"
 )
 
@@ -18,6 +20,10 @@ var app config.AppConfig
 var session *scs.SessionManager
 
 func main() {
+
+	// put this in session
+
+	gob.Register(models.Reservation{})
 
 	// change this to true in Production
 	app.InProduction = false
