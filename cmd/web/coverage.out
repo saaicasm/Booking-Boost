@@ -1,0 +1,12 @@
+mode: set
+github.com/iamlego/bookingBoost/cmd/web/main.go:22.13,25.16 2 0
+github.com/iamlego/bookingBoost/cmd/web/main.go:25.16,27.3 1 0
+github.com/iamlego/bookingBoost/cmd/web/main.go:31.2,40.16 4 0
+github.com/iamlego/bookingBoost/cmd/web/main.go:44.18,61.16 10 1
+github.com/iamlego/bookingBoost/cmd/web/main.go:61.16,64.3 2 0
+github.com/iamlego/bookingBoost/cmd/web/main.go:66.2,74.12 6 1
+github.com/iamlego/bookingBoost/cmd/web/middleware.go:9.54,11.71 1 1
+github.com/iamlego/bookingBoost/cmd/web/middleware.go:11.71,13.3 1 0
+github.com/iamlego/bookingBoost/cmd/web/middleware.go:16.45,27.2 3 1
+github.com/iamlego/bookingBoost/cmd/web/middleware.go:29.50,31.2 1 1
+github.com/iamlego/bookingBoost/cmd/web/routes.go:11.49,41.2 18 1
