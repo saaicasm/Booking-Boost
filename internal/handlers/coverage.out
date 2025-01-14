@@ -1,0 +1,22 @@
+mode: set
+github.com/iamlego/bookingBoost/internal/handlers/handler.go:24.47,28.2 1 1
+github.com/iamlego/bookingBoost/internal/handlers/handler.go:31.33,33.2 1 1
+github.com/iamlego/bookingBoost/internal/handlers/handler.go:36.67,41.2 3 1
+github.com/iamlego/bookingBoost/internal/handlers/handler.go:44.68,56.2 5 1
+github.com/iamlego/bookingBoost/internal/handlers/handler.go:59.74,69.2 4 1
+github.com/iamlego/bookingBoost/internal/handlers/handler.go:72.78,74.16 2 1
+github.com/iamlego/bookingBoost/internal/handlers/handler.go:74.16,77.3 2 0
+github.com/iamlego/bookingBoost/internal/handlers/handler.go:79.2,92.19 6 1
+github.com/iamlego/bookingBoost/internal/handlers/handler.go:92.19,102.3 4 0
+github.com/iamlego/bookingBoost/internal/handlers/handler.go:104.2,105.66 2 1
+github.com/iamlego/bookingBoost/internal/handlers/handler.go:110.71,112.2 1 1
+github.com/iamlego/bookingBoost/internal/handlers/handler.go:115.69,117.2 1 1
+github.com/iamlego/bookingBoost/internal/handlers/handler.go:120.75,122.2 1 1
+github.com/iamlego/bookingBoost/internal/handlers/handler.go:125.70,127.2 1 1
+github.com/iamlego/bookingBoost/internal/handlers/handler.go:130.79,136.2 3 1
+github.com/iamlego/bookingBoost/internal/handlers/handler.go:144.83,153.16 3 1
+github.com/iamlego/bookingBoost/internal/handlers/handler.go:153.16,155.3 1 0
+github.com/iamlego/bookingBoost/internal/handlers/handler.go:157.2,158.14 2 1
+github.com/iamlego/bookingBoost/internal/handlers/handler.go:162.81,165.9 2 1
+github.com/iamlego/bookingBoost/internal/handlers/handler.go:165.9,170.3 4 1
+github.com/iamlego/bookingBoost/internal/handlers/handler.go:172.2,179.4 4 0
