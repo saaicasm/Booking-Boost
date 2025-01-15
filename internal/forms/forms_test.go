@@ -46,13 +46,13 @@ func TestRequired(t *testing.T) {
 }
 
 func TestHas(t *testing.T) {
-	postField := url.Values{}
+	postedData := url.Values{}
 
-	postField.Set("key1", "value1")
+	postedData.Set("key1", "value1")
 
 	r, _ := http.NewRequest("POST", "/testfield", nil)
 
-	r.PostForm = postField
+	r.PostForm = postedData
 	form := New(r.PostForm)
 
 	res := form.Has("key1", *r)
@@ -63,11 +63,43 @@ func TestHas(t *testing.T) {
 
 }
 
-// func (f *Form) Has(field string, r http.Request) bool {
-// 	x := r.Form.Get(field)
-// 	if x == "" {
-// 		f.Errors.Add(field, "This feild cannot be blank")
-// 		return false
-// 	}
-// 	return true
-// }
+func TestMinLength(t *testing.T) {
+	postedData := url.Values{}
+
+	postedData.Set("some", "wordle")
+
+	r, _ := http.NewRequest("POST", "/yourmom", nil)
+
+	r.PostForm = postedData
+
+	form := New(r.PostForm)
+
+	form.MinLength("some", 6, r)
+
+	if form.Valid() {
+		t.Error("Your mom")
+	}
+
+}
+
+func TestIsMail(t *testing.T) {
+	email := "iamlego@las.com"
+
+	r, _ := http.NewRequest("POST", "/fox", nil)
+	form := New(r.PostForm)
+
+	form.IsEmail("x")
+	if form.Valid() {
+		t.Error("Your mom is not an email")
+	}
+
+	postedDatta := url.Values{}
+	postedDatta.Add("email", email)
+	form = New(postedDatta)
+
+	form.IsEmail("email")
+	if !form.Valid() {
+		t.Error("Invalid email")
+	}
+
+}
