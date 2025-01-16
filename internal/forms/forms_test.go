@@ -28,78 +28,124 @@ func TestValid(t *testing.T) {
 }
 
 func TestRequired(t *testing.T) {
+	r, _ := http.NewRequest("POST", "/test", nil)
+	form := New(r.PostForm)
+
+	isValid := form.Valid()
+
+	if !isValid {
+		t.Error("got invalid should be valid")
+	}
+
 	postedData := url.Values{}
 
 	postedData.Add("a", "1")
 	postedData.Add("b", "2")
 	postedData.Add("c", "3")
 
-	r, _ := http.NewRequest("POST", "/test", nil)
 	r.PostForm = postedData
-	form := New(r.PostForm)
+	form = New(postedData)
 
 	form.Required("a", "b", "c")
 	if !form.Valid() {
-		t.Error("Required fields not present")
+		t.Error("Required fields present but got error")
+	}
+
+	postedData.Add("empty", "")
+
+	r.PostForm = postedData
+	form = New(postedData)
+	form.Required("empty")
+
+	if form.Valid() {
+		t.Error("should be invalid but got none")
 	}
 
 }
 
 func TestHas(t *testing.T) {
 	postedData := url.Values{}
+	form := New(postedData)
 
-	postedData.Set("key1", "value1")
+	has := form.Has("whatever")
+	if has {
+		t.Error("shows a field when it should not")
+	}
 
-	r, _ := http.NewRequest("POST", "/testfield", nil)
+	postedData = url.Values{}
+	postedData.Add("key1", "value1")
+	form = New(postedData)
 
-	r.PostForm = postedData
-	form := New(r.PostForm)
+	res := form.Has("key1")
 
-	res := form.Has("key1", *r)
-
-	if res {
-		t.Error("Value missing")
+	if !res {
+		t.Error("shows no field when it should")
 	}
 
 }
 
 func TestMinLength(t *testing.T) {
+
 	postedData := url.Values{}
 
-	postedData.Set("some", "wordle")
+	postedData.Add("some", "word")
+	form := New(postedData)
 
-	r, _ := http.NewRequest("POST", "/yourmom", nil)
+	minV := form.MinLength("some", 5)
 
-	r.PostForm = postedData
+	if minV {
+		t.Error("should give an error its short")
+	}
 
-	form := New(r.PostForm)
+	postedData.Add("valid", "wordle")
+	form = New(postedData)
 
-	form.MinLength("some", 6, r)
+	minV = form.MinLength("valid", 5)
 
-	if form.Valid() {
-		t.Error("Your mom")
+	if !minV {
+		t.Error("giving an error with valid string")
 	}
 
 }
 
 func TestIsMail(t *testing.T) {
-	email := "iamlego@las.com"
+	postedDatta := url.Values{}
+	form := New(postedDatta)
 
-	r, _ := http.NewRequest("POST", "/fox", nil)
-	form := New(r.PostForm)
+	email := "iamlego@las.com"
 
 	form.IsEmail("x")
 	if form.Valid() {
 		t.Error("Your mom is not an email")
 	}
 
-	postedDatta := url.Values{}
+	postedDatta = url.Values{}
 	postedDatta.Add("email", email)
 	form = New(postedDatta)
 
 	form.IsEmail("email")
 	if !form.Valid() {
 		t.Error("Invalid email")
+	}
+
+}
+
+func TestGet(t *testing.T) {
+	err := errors{}
+
+	err.Add("err1", "first error")
+	err.Add("err2", "second error")
+
+	res := err.Get("err1")
+
+	if res == "" {
+		t.Error("Got empty when there is field")
+	}
+
+	res = err.Get("some")
+
+	if res != "" {
+		t.Error("Got value when invalid error field")
 	}
 
 }
