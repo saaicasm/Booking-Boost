@@ -1,0 +1,18 @@
+mode: set
+github.com/iamlego/bookingBoost/internal/forms/errors.go:6.44,8.2 1 1
+github.com/iamlego/bookingBoost/internal/forms/errors.go:11.42,14.18 2 1
+github.com/iamlego/bookingBoost/internal/forms/errors.go:14.18,16.3 1 1
+github.com/iamlego/bookingBoost/internal/forms/errors.go:17.2,17.14 1 1
+github.com/iamlego/bookingBoost/internal/forms/forms.go:18.29,20.2 1 1
+github.com/iamlego/bookingBoost/internal/forms/forms.go:23.33,28.2 1 1
+github.com/iamlego/bookingBoost/internal/forms/forms.go:30.43,32.31 1 1
+github.com/iamlego/bookingBoost/internal/forms/forms.go:32.31,35.37 2 1
+github.com/iamlego/bookingBoost/internal/forms/forms.go:35.37,37.4 1 1
+github.com/iamlego/bookingBoost/internal/forms/forms.go:42.39,44.13 2 1
+github.com/iamlego/bookingBoost/internal/forms/forms.go:44.13,47.3 2 1
+github.com/iamlego/bookingBoost/internal/forms/forms.go:48.2,48.13 1 1
+github.com/iamlego/bookingBoost/internal/forms/forms.go:52.57,54.21 2 1
+github.com/iamlego/bookingBoost/internal/forms/forms.go:54.21,57.3 2 1
+github.com/iamlego/bookingBoost/internal/forms/forms.go:58.2,58.13 1 1
+github.com/iamlego/bookingBoost/internal/forms/forms.go:61.38,62.40 1 1
+github.com/iamlego/bookingBoost/internal/forms/forms.go:62.40,64.3 1 1
