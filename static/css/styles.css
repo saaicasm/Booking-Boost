@@ -3,98 +3,98 @@ body {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #ffffff; 
+    color: #333333;
     text-align: left;
-    background: linear-gradient(135deg, #1a1a1a, #330033, #660066); 
+    background: linear-gradient(90deg, #f0f5f5, #e0eaea, #d0e0e0);
     margin: 0;
     padding: 0;
-    min-height: 100vh; 
+    min-height: 100vh;
 }
-
-.container-fluid{
-    background: linear-gradient(135deg, #1a1a1a, #330033, #660066); 
-}
-
 
 a {
-    color: #ffd700; 
+    color: #007bff;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #ff00ff; 
+    color: #0056b3;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #ffffff; 
+    color: #333333;
     margin-top: 0;
     margin-bottom: 1rem;
 }
 
-
 input, button, textarea, select {
-    background-color: rgba(255, 255, 255, 0.1); 
-    border: 1px solid #8a2be2; 
-    color: #ffffff; 
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    color: #333333;
     padding: 0.5rem;
     border-radius: 4px;
     transition: all 0.3s ease;
 }
 
 input:focus, button:focus, textarea:focus, select:focus {
-    border-color: #ffd700;
+    border-color: #007bff;
     outline: none;
 }
 
 button {
-    background-color: #8a2be2; 
-    color: #ffffff; 
+    background-color: #007bff;
+    color: #ffffff;
     cursor: pointer;
+    border: none;
+    padding: 6px 6px;
+    margin: 7px;
+    border-radius: 45px;
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: #ff00ff; 
+    background-color: #0056b3;
 }
 
-.my-footer {
-    height: 5em;
-    background: linear-gradient(135deg, #1a1a1a, #330033, #660066);
-    margin-top: 1.5em;
-    padding: 1em;
-    color: #ffffff; 
-    font-size: 80%;
-    text-align: center; 
-    border-top: 2px solid #8a2be2; 
-    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: orange !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.my-footer a {
-    color: #ffd700; 
-    text-decoration: none;
-    transition: color 0.3s ease;
+.navbar-brand:hover {
+    color: #0056b3;
+    transform: scale(1.05);
 }
 
-.my-footer a:hover {
-    color: #ff00ff;
+.navbar-brand::before {
+    content: "✧";
+    font-size: 1.8rem;
+    color: #ff6f61;
+    animation: spin 4s linear infinite;
 }
 
-.notie-container {
-    box-shadow: none;
-}
-
-.datepicker {
-    z-index: 10000;
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .nav-wrapper {
-    background: linear-gradient(135deg, #1a1a1a, #330033, #660066);
-    color: #fff;
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a, #333333);
+    color: #333333;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
 
 .nav-wrapper nav {
@@ -125,17 +125,17 @@ button:hover {
     left: 0;
     width: 0;
     height: 2px;
-    background: #8a2be2;
+    background: #007bff;
     transition: width 0.3s ease-in-out;
 }
 
 .nav-wrapper li:hover::after {
-    width: 100%; 
+    width: 100%;
 }
 
 .nav-wrapper a {
     text-decoration: none;
-    color: #fff;
+    color: #333333;
     font-weight: 600;
     font-size: 20px;
     padding: 5px 10px;
@@ -144,28 +144,13 @@ button:hover {
 }
 
 .nav-wrapper a:hover {
-    background: rgba(255, 255, 255, 0.1); 
-    transform: translateY(-2px); 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-
-#main-carousel {
-    margin-top: -1px; 
-}
-
-.carousel-inner {
-    border-radius: 0 0 20px 20px; 
-    overflow: hidden;
-}
-
-
-.carousel-item img {
-    padding-top: 1px;
+    background: rgba(0, 123, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-caption {
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 10px;
     bottom: 20%;
@@ -174,45 +159,50 @@ button:hover {
 .carousel-caption h5 {
     font-size: 2.5rem;
     font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #333333;
 }
 
 .carousel-caption p {
     font-size: 1.2rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    color: #666666;
 }
 
-
 .container-fluid {
-    padding: 40px 20px;
-    background: #f9f9f9; 
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a, #333333);
+    box-shadow: 0 0 30px 30px rgba(0.3, 0.3, 0.3, 0.3);
+    width: 60%;
+    padding: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 20%;
+    border-radius: 15px;
 }
 
 .container-fluid h1 {
     font-size: 3rem;
-    color: #4271e7; 
+    color: #007bff;
     margin-bottom: 20px;
 }
 
 .container-fluid h2 {
     font-size: 2rem;
-    color: #8a2be2;
+    color: #ffffff;
     margin-bottom: 30px;
 }
 
 .container-fluid p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #333;
+    color: #ffffff;
     max-width: 800px;
     margin: 0 auto;
     text-align: justify;
 }
 
-
 .btn-success {
     background: #28a745;
     border: none;
+    margin-top: 20px;
     padding: 12px 30px;
     font-size: 1.1rem;
     font-weight: bold;
@@ -221,7 +211,29 @@ button:hover {
 }
 
 .btn-success:hover {
-    background: #218838; 
+    background: #218838;
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.my-footer {
+    height: 5em;
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a, #333333);
+    margin-top: 1.5em;
+    padding: 1em;
+    color: #333333;
+    font-size: 80%;
+    text-align: center;
+    border-top: 2px solid #ced4da;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.my-footer a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.my-footer a:hover {
+    color: #0056b3;
 }
