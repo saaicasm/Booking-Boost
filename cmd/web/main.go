@@ -23,6 +23,7 @@ var session *scs.SessionManager
 var infoLog *log.Logger
 var errorLog *log.Logger
 
+
 func main() {
 
 	err := run()
